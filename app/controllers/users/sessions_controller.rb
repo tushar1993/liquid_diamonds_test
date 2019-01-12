@@ -8,10 +8,6 @@ class Users::SessionsController < Devise::SessionsController
 		super
 	end
 
-	def destroy
-		debugger
-		sign_out(current_user)
-	end
 	private
 
 	def after_sign_in_path_for(resource)
