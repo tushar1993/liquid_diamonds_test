@@ -1,0 +1,104 @@
+<div class="row">
+	<div class="col-md-8">
+		<table class="table table-stripped">
+			<thead>
+				<tr>
+					<td>
+						Model
+					</td>
+					<td>
+						Brand
+					</td>
+					<td>
+						RAM
+					</td>
+					<td>
+						External Storage
+					</td>
+					<td>
+						Manufaturing Year
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% for @item in @products %>
+					<tr>
+						<td>
+							<%= @item.model %>
+						</td>
+						<td>
+							<%= @item.brand %>
+						</td>
+						<td>
+							<%= @item.ram %>
+						</td>
+						<td>
+							<%= @item.external_storage %>
+						</td>
+						<td>
+							<%= @item.year %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-3 well">
+		<form action=<%= products_path %> method="get">
+			<div class="row">
+				<div class="form-group">
+					<label for="model">Model:</label>
+					<input type="model" class="form-control" name="model-equals">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label for="brand">Brand:</label>
+					<input type="brand" class="form-control" name="brand-equals">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="ram_operator">RAM:</label>
+						<select class="form-control" name="ram_operator">
+							<option value="ram-greater_than">Greater Than</option>
+							<option value="ram-less_than">Less Than</option>
+							<option value="ram-equals">Equals</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="ram_operand">&nbsp;</label>
+						<input type="ram_operand" class="form-control" name="ram_operand">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="external_storage_operator">External Storage:</label>
+						<select class="form-control" name="external_storage_operator">
+							<option value="storage-greater_than">Greater Than</option>
+							<option value="storage-less_than">Less Than</option>
+							<option value="storage-equals">Equals</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="external_storage_operand">&nbsp;</label>
+						<input type="external_storage_operand" class="form-control" name="external_storage_operand">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div style="width: 170px; margin: 0 auto;">
+					<button type="submit" class="btn btn-primary"><%=t :submit %></button>
+					<input type="submit" value="Download" name="download" class="btn btn-default">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
