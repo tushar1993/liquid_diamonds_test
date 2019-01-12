@@ -2,7 +2,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 	def signup
 		pass = params[:password] || SecureRandom.hex(10)
-		pass_confirm = params[:password_confirmation] || pass
 		create {
 			flash[:conversion] = true
 			redir_url = "/products/show"
