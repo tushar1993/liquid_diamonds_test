@@ -4,8 +4,12 @@ class ProductsController < ApplicationController
 
 	def show
 		filter_products
-		@products = @products.limit(25)
 		download if params["download"].present?
+		@products = @products.limit(25)
+		@brand = params["brand-equals"]
+		@model = params["model-equals"]
+		@ram = params["ram_operand"]
+		@storage = params["external_storage_operand"]
 	end
 
 	private

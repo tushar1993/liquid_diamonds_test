@@ -48,13 +48,13 @@
 			<div class="row">
 				<div class="form-group">
 					<label for="model">Model:</label>
-					<input type="model" class="form-control" name="model-equals">
+					<input type="model" class="form-control" name="model-equals" value="<%= @model.to_s %>">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group">
 					<label for="brand">Brand:</label>
-					<input type="brand" class="form-control" name="brand-equals">
+					<input type="brand" class="form-control" name="brand-equals" value="<%= @brand.to_s %>">
 				</div>
 			</div>
 			<div class="row">
@@ -71,7 +71,7 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="ram_operand">&nbsp;</label>
-						<input type="ram_operand" class="form-control" name="ram_operand">
+						<input type="ram_operand" class="form-control" name="ram_operand" value="<%= @ram.to_s%>">
 					</div>
 				</div>
 			</div>
@@ -89,7 +89,7 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="external_storage_operand">&nbsp;</label>
-						<input type="external_storage_operand" class="form-control" name="external_storage_operand">
+						<input type="external_storage_operand" class="form-control" name="external_storage_operand" value="<%= @storage.to_s%>">
 					</div>
 				</div>
 			</div>
